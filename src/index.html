@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <section id="timer" class="timer">
+      <div class="phase"><span id="phase">Focus</span><span id="dots" class="dots"></span></div>
+      <div id="clock" class="clock">25:00</div>
+      <div class="progress"><div id="bar"></div></div>
+      <div class="controls">
+        <button id="reset" class="icon-btn" title="Reset"><i class="i i-reset"></i></button>
+        <button id="toggle" class="play" title="Start"><i id="toggle-icon" class="i i-play"></i></button>
+        <button id="skip" class="icon-btn" title="Skip"><i class="i i-skip"></i></button>
+      </div>
+    </section>
+
+    <section id="tasks-section">
+      <hr>
+      <div id="tasks" class="list"></div>
+      <label class="row add">
+        <i class="i i-plus"></i>
+        <input id="new-task" placeholder="Add Task" maxlength="200" spellcheck="false" autocomplete="off">
+      </label>
+    </section>
+
+    <section id="report" class="report" hidden>
+      <div class="segmented">
+        <button data-range="today" class="on">Today</button>
+        <button data-range="week">Week</button>
+      </div>
+      <div>
+        <div id="r-total" class="big"></div>
+        <div id="r-count" class="sub"></div>
+      </div>
+      <div id="r-week" class="week"></div>
+      <div id="r-tasks" class="breakdown"></div>
+    </section>
+
+    <hr>
+    <footer>
+      <span id="today-sum"><span class="sub">Today</span> <span id="today">0m</span></span>
+      <span class="spacer"></span>
+      <button id="report-btn" class="icon-btn" title="Report"><i class="i i-chart"></i></button>
+      <button id="more-btn" class="icon-btn" title="Settings"><i class="i i-more"></i></button>
+    </footer>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>

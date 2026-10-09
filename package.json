@@ -1,0 +1,17 @@
+{
+  "name": "pomodoro-bar",
+  "productName": "Pomodoro",
+  "version": "1.0.0",
+  "description": "A dead-minimal Pomodoro timer for the macOS menu bar",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "icons": "swift scripts/icons.swift assets",
+    "package": "electron-packager . Pomodoro --platform=darwin --arch=arm64 --out=dist --overwrite --icon=assets/AppIcon.icns --extend-info=scripts/extend-info.plist --app-bundle-id=app.pomodorobar --ignore='^/(dist|scripts)($|/)' && codesign --force --deep --sign - dist/Pomodoro-darwin-arm64/Pomodoro.app"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.7.0"
+  }
+}
